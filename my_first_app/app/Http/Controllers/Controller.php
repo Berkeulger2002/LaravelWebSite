@@ -12,5 +12,8 @@ use OpenAdmin\Admin\Controllers\AdminController;
 
 class YourController extends AdminController
 {
-    // Your code here
+    public function login()
+    {
+        return view('adminlogin'); 
+    }
 }

@@ -26,13 +26,14 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assetsss/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assetsss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assetsss/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assetsss/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assetsss/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assetsss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assetsss/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assetsss/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
 
   <!-- Template Main CSS File -->
-  <link href="assetsss/css/style.css'" rel="stylesheet">
+  <link href="assetsss/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: EstateAgency
@@ -45,7 +46,14 @@
 </head>
 
 <body>
-
+<form action="/create" method="POST">
+@csrf
+<label for="title">User:</label>
+<input type="text" name="title"></br>
+<label for="body">Massage: </label>
+<textarea name="body" cols="30" rows="3"></textarea>
+<button>Send</button>
+</form>
   <!-- ======= Property Search Section ======= -->
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->

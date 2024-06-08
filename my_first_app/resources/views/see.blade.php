@@ -3,7 +3,7 @@ $con = mysqli_connect("localhost", "root","", "my_first_app");
 if(!$con){ 
     die("Connection Error");
 }
-$query = "select * from users";
+$query = "select * from articles";
 $result = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
@@ -112,14 +112,14 @@ $result = mysqli_query($con, $query);
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-    <a href="{{ url('/massage') }}" class="nav-link">
+    <a href="{{ route('adminlogin') }}" class="nav-link">
         <i class="far fa-circle nav-icon"></i>
         <p>Massages</p>
     </a>
 </li>
 
               <li class="nav-item">
-                <a href="{{ url('/ad') }}" class="nav-link active">
+                <a href="./index2.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tablo</p>
                 </a>
@@ -155,32 +155,24 @@ $result = mysqli_query($con, $query);
     </div>
     <div class="container mt-5">
     <table class="table table-bordered text-center">
-  <tr class="bg-dark text-white">
-    <td> User ID </td>
-    <td> First Name </td>
-    <td> Email </td>
-  </tr>
-  <?php
-  while($row = mysqli_fetch_assoc($result))
-  {
-  ?>
-  <tr>
-    <td><?php echo $row['id'];?></td>
-    <td><?php echo $row['name'];?></td>
-    <td><?php echo $row['email'];?></td>
-  </tr>
-  <tr>
-    <td colspan="3">
-      <button class="btn btn-primary">Edit ID</button>
-      <button class="btn btn-primary">Edit Name</button>
-      <button class="btn btn-primary">Edit Email</button>
-    </td>
-  </tr>
-  <?php
-  }
-  ?>
+<tr class="bg-dark text-white">
+<td> Massage Number </td>
+<td>  Name </td>
+<td> Massage </td>
+</tr>
+<?php
+while($row = mysqli_fetch_assoc($result))
+{
+?>
+<td><?php echo $row['id']; ?></td>
+<td><?php echo $row['title']; ?></td>
+<td><?php echo $row['body']; ?></td>
+<td><input type="checkbox" name="selectRow[]" value="<?php echo $row['id']; ?>"></td>
+</tr>
+<?php
+}
+?>
 </table>
-
 
 
     </div>
